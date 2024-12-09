@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Registro</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+
+        h2 {
+            text-align: center;
+            padding: 20px;
+            color: #4CAF50;
+            margin: 0;
+            font-size: 24px;
+        }
+
+        form {
+            width: 350px;
+            margin: 20px auto;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        label {
+            margin-top: 15px;
+            display: block;
+            font-weight: bold;
+            color: #333;
+        }
+
+        input[type="text"], select, textarea {
+            width: 100%;
+            padding: 12px;
+            margin-top: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .radio-group {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+
+        .radio-group label {
+            margin-right: 20px;
+        }
+
+        textarea {
+            height: 100px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h2>Formulario de Registro</h2>
+    <form action="procesar.php" method="post">
+        <!-- Nombre y Apellido -->
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+
+        <label for="apellido">Apellido:</label>
+        <input type="text" id="apellido" name="apellido" required>
+
+        <!-- Selección del tipo de documento -->
+        <label for="documento">Tipo de Documento:</label>
+        <div class="radio-group">
+            <div>
+                <input type="radio" id="cc" name="documento" value="CC" required>
+                <label for="cc">Cédula de Ciudadanía (CC)</label>
+            </div>
+            <div>
+                <input type="radio" id="dni" name="documento" value="DNI">
+                <label for="dni">DNI</label>
+            </div>
+            <div>
+                <input type="radio" id="pasaporte" name="documento" value="Pasaporte">
+                <label for="pasaporte">Pasaporte</label>
+            </div>
+        </div>
+
+        <!-- Número de documento -->
+        <label for="num_documento">Número de Documento:</label>
+        <input type="text" id="num_documento" name="num_documento" required>
+
+        <!-- Caja de texto adicional -->
+        <label for="texto_adicional">Texto Adicional:</label>
+        <textarea id="texto_adicional" name="texto_adicional"></textarea>
+
+        <!-- ¿Cómo te sientes hoy? -->
+        <label for="sentimiento">¿Cómo te sientes hoy?</label>
+        <select id="sentimiento" name="sentimiento" required>
+            <option value="feliz">Feliz</option>
+            <option value="triste">Triste</option>
+            <option value="aburrido">Aburrido</option>
+        </select>
+
+        <!-- Botón de enviar -->
+        <button type="submit">Enviar</button>
+    </form>
+
+</body>
+</html>
+

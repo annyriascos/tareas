@@ -1,0 +1,15 @@
+mysql -u root -p
+
+CREATE DATABASE formulario_contacto;
+USE formulario_contacto;
+
+CREATE TABLE contactos (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  nombre VARCHAR(100) NOT NULL,
+  apellido VARCHAR(100) NOT NULL,
+  tipo_documento VARCHAR(50) NOT NULL,
+  numero_documento VARCHAR(50) NOT NULL,
+  correo VARCHAR(100) NOT NULL,
+  mensaje TEXT NOT NULL,
+  fecha TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
